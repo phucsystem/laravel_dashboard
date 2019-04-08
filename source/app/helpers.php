@@ -1,8 +1,11 @@
 <?php
 
-function gravatar(string $name): string
+function markdownToHtml(string $markdown)
 {
-    $gravatarId = md5(strtolower(trim($name)));
+    return (new Parsedown)->text($markdown);
+}
 
-    return 'https://gravatar.com/avatar/' . $gravatarId . '?s=240';
+function usingNodeServer(): bool
+{
+    return config('broadcasting.default') === 'laravel-echo-server';
 }

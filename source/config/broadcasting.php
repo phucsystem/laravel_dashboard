@@ -32,13 +32,22 @@ return [
 
         'pusher' => [
             'driver' => 'pusher',
-            'key' => env('PUSHER_APP_KEY'),
-            'secret' => env('PUSHER_APP_SECRET'),
+            'key' => env('PUSHER_KEY'),
+            'secret' => env('PUSHER_SECRET'),
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
-                'host' => '127.0.0.1',
+                'cluster' => env('PUSHER_CLUSTER', 'mt1'),
+            ],
+        ],
+
+        'laravel-echo-server' => [
+            'driver' => 'pusher',
+            'key' => env('PUSHER_KEY'),
+            'secret' => env('PUSHER_SECRET'),
+            'app_id' => env('PUSHER_APP_ID'),
+            'options' => [
+                'host' => 'localhost',
                 'port' => 6001,
-                'scheme' => 'http'
             ],
         ],
 

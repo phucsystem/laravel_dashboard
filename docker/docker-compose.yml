@@ -4,7 +4,7 @@ services:
     ports:
      - "80:80"
     volumes:
-     - ../src:/var/www
+     - ../source:/var/www
      - ../bin:/var/www/bin
      - ./apache/sites-enabled:/etc/apache2/sites-enabled
     links:
