@@ -36,6 +36,7 @@ new Vue({
         let config = {
             broadcaster: 'pusher',
             key: window.dashboard.pusherKey,
+            cluster: window.dashboard.pusherCluster,
             wsHost: window.location.hostname,
             wsPath: window.dashboard.clientConnectionPath,
             wsPort: window.dashboard.wsPort,

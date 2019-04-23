@@ -2,7 +2,7 @@
 
 @section('content')
 
-@javascript(compact('pusherKey', 'clientConnectionPath', 'environment', 'openWeatherMapKey'))
+@javascript(compact('pusherKey', 'pusherCluster', 'clientConnectionPath', 'environment', 'openWeatherMapKey'))
 <div id="dashboard">
     <dashboard class="font-sans">
         <twitter :initial-tweets="{{ json_encode($initialTweets) }}" position="a1:a24"></twitter>
@@ -18,7 +18,7 @@
         <team-member name="jef" avatar="{{ gravatar('jef@spatie.be') }}" birthday="1975-03-28" position="d11:d13"></team-member>
         <team-member name="wouter" avatar="{{ gravatar('wouter@spatie.be') }}" birthday="1991-03-15" position="d14:d16"></team-member>
         <team-member name="willem" avatar="{{ gravatar('willem@spatie.be') }}" birthday="1975-09-04" position="d17:d24"></team-member>
-        <time-weather position="e1:e6" date-format="ddd DD/MM" time-zone="Asia/Bangkok" weather-city="Saigon"></time-weather>
+        <time-weather position="e1:e6" date-format="ddd DD/MM" time-zone="Asia/Bangkok" weather-city="Bangkok"></time-weather>
         <internet-connection position="e1:e6"></internet-connection>
         <statistics position="d1:d10"></statistics>
         <uptime position="d1:d10"></uptime>
