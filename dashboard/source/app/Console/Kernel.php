@@ -20,17 +20,17 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(FetchTrainsCommand::class)->everyMinute();
-        $schedule->command(FetchCalendarEventsCommand::class)->everyMinute();
-        $schedule->command(FetchCurrentTracksCommand::class)->everyMinute();
+//        $schedule->command(FetchTrainsCommand::class)->everyMinute();
+//        $schedule->command(FetchCalendarEventsCommand::class)->everyMinute();
+//        $schedule->command(FetchCurrentTracksCommand::class)->everyMinute();
         $schedule->command(SendHeartbeatCommand::class)->everyMinute();
-        $schedule->command(FetchVeloStationsCommand::class)->everyMinute();
+//        $schedule->command(FetchVeloStationsCommand::class)->everyMinute();
         $schedule->command(DetermineAppearanceCommand::class)->everyMinute();
-        $schedule->command(FetchBuienradarForecastsCommand::class)->everyFiveMinutes();
-        $schedule->command(FetchTasksCommand::class)->everyFiveMinutes();
-        $schedule->command(FetchStatusCommand::class)->everyFiveMinutes();
-        $schedule->command(FetchGitHubTotalsCommand::class)->everyThirtyMinutes();
-        $schedule->command(FetchPackagistTotalsCommand::class)->hourly();
+//        $schedule->command(FetchBuienradarForecastsCommand::class)->everyMinute();
+//        $schedule->command(FetchTasksCommand::class)->everyMinute();
+//        $schedule->command(FetchStatusCommand::class)->everyMinute();
+//        $schedule->command(FetchGitHubTotalsCommand::class)->everyMinute();
+//        $schedule->command(FetchPackagistTotalsCommand::class)->hourly();
         $schedule->command('websockets:clean')->daily();
     }
 

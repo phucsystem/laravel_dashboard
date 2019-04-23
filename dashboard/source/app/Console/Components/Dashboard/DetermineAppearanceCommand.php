@@ -13,10 +13,10 @@ class DetermineAppearanceCommand extends Command
     protected $description = 'Determine the looks of the dashboard';
 
     /** @var float */
-    protected $antwerpLat = 51.260197;
+    protected $antwerpLat = 13.7620638;
 
     /** @var float */
-    protected $antwerpLng = 4.402771;
+    protected $antwerpLng = 100.5577409;
 
     public function handle()
     {
