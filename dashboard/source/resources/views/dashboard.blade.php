@@ -20,9 +20,8 @@
         <team-member name="willem" avatar="{{ gravatar('willem@spatie.be') }}" birthday="1975-09-04" position="d17:d24"></team-member>
         <time-weather position="e1:e6" date-format="ddd DD/MM" time-zone="Asia/Bangkok" weather-city="Bangkok"></time-weather>
         <internet-connection position="e1:e6"></internet-connection>
-        <statistics position="d1:d10"></statistics>
-        <uptime position="d1:d10"></uptime>
-        <calendar position="e7:e16"></calendar>
+        <uptime position="e7:e16"></uptime>
+        <calendar position="d1:d10"></calendar>
         <velo position="e17:e24"></velo>
     </dashboard>
 </div>

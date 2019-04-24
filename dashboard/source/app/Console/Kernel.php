@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Components\Buienradar\FetchBuienradarForecastsCommand;
+use App\Console\Components\Statistics\FetchUptimeRobotCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Components\Trains\FetchTrainsCommand;
 use App\Console\Components\Velo\FetchVeloStationsCommand;
@@ -20,17 +21,9 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
-//        $schedule->command(FetchTrainsCommand::class)->everyMinute();
-//        $schedule->command(FetchCalendarEventsCommand::class)->everyMinute();
-//        $schedule->command(FetchCurrentTracksCommand::class)->everyMinute();
         $schedule->command(SendHeartbeatCommand::class)->everyMinute();
-//        $schedule->command(FetchVeloStationsCommand::class)->everyMinute();
         $schedule->command(DetermineAppearanceCommand::class)->everyMinute();
-//        $schedule->command(FetchBuienradarForecastsCommand::class)->everyMinute();
-//        $schedule->command(FetchTasksCommand::class)->everyMinute();
-//        $schedule->command(FetchStatusCommand::class)->everyMinute();
-//        $schedule->command(FetchGitHubTotalsCommand::class)->everyMinute();
-//        $schedule->command(FetchPackagistTotalsCommand::class)->hourly();
+        $schedule->command(FetchUptimeRobotCommand::class)->everyMinute();
         $schedule->command('websockets:clean')->daily();
     }
 

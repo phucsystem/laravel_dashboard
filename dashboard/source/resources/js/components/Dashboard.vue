@@ -25,6 +25,8 @@ export default {
             return {
                 'Dashboard.UpdateAppearance': response => {
                     this.mode = response.mode;
+                    console.log(new Date());
+                    console.log('appear mode '  +response.mode);
                 },
             };
         },
