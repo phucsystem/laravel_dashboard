@@ -6,7 +6,7 @@
             </div>
             <ul class="align-self-center">
                 <li v-for="monitor in this.monitors">
-                    <span class="font-bold" style="line-height: 0.8em">
+                    <span class="font-bold" style="line-height: 0.9em">
                         <a :href="monitor.url" target="_blank">{{monitor.name}}</a>
                         <br>
                         <span style="font-size: 0.6em" class="text-dimmed">Uptime: {{Math.floor(monitor.uptime_duration/60)}} min</span>
