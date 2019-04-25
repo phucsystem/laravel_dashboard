@@ -1,5 +1,7 @@
 import moment from 'moment';
 import twemoji from 'twemoji';
+var momentDurationFormatSetup = require("moment-duration-format");
+momentDurationFormatSetup(moment);
 
 export function emoji(character) {
     return twemoji.parse(character);
@@ -14,7 +16,10 @@ export function formatNumber(value) {
 }
 
 export function formatDuration(start) {
-    return moment.duration(moment().diff(start), 'milliseconds').format('d[d] h[h] m[m]');
+    // console.log(start);
+    // console.log(moment.duration(parseFloat(start, 10), 'seconds').format());
+    // console.log(moment.duration(6248399, 'seconds').format());
+    return moment.duration(parseInt(start), 'seconds').format('d[d] h[h] m[m]');
 }
 
 export function withinWeek(value) {

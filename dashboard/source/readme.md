@@ -14,3 +14,8 @@ Install this package by running cloning this repository and install like you nor
 - Open the dashboard in your browser, login and wait for the update events to fill the dashboard.
 - Restart cron service
 - Add new cron: /usr/local/bin/php /var/www/artisan schedule:run > /tmp/test.txt
+
+## Setup Gmails
+- Get author.json from Gmail https://developers.google.com/gmail/api/quickstart/php
+- Run command on terminal.
+- Input verification code

@@ -15,5 +15,6 @@ class UpdateDashboardCommand extends Command
         $this->call('dashboard:determine-appearance');
         $this->call('dashboard:send-heartbeat');
         $this->call('dashboard:fetch-uptime-robot');
+        $this->call('dashboard:fetch-gmail');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Components\Buienradar\FetchBuienradarForecastsCommand;
+use App\Console\Components\Mail\FetchLastGmail;
 use App\Console\Components\Statistics\FetchUptimeRobotCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Components\Trains\FetchTrainsCommand;
@@ -24,6 +25,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(SendHeartbeatCommand::class)->everyMinute();
         $schedule->command(DetermineAppearanceCommand::class)->everyMinute();
         $schedule->command(FetchUptimeRobotCommand::class)->everyMinute();
+        $schedule->command(FetchLastGmail::class)->everyMinute();
         $schedule->command('websockets:clean')->daily();
     }
 
