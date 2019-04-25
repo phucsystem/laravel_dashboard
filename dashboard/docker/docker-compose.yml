@@ -22,10 +22,13 @@ services:
      - "3306:3306"
     volumes:
      - storage:/data/db
+     - ./init.sql:/data/application/init.sql
     container_name: dashboard_db
     image: mariadb
     environment:
-        MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root@2019#
+      MYSQL_DATABASE: dashboard_dev
     networks:
       - dashboard-network
 volumes:
