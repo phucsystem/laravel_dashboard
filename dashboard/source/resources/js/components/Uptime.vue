@@ -9,7 +9,7 @@
                     <span class="font-bold" style="line-height: 0.9em">
                         <a :href="monitor.url" target="_blank">{{monitor.name}}</a>
                         <br>
-                        <span style="font-size: 0.6em" class="text-dimmed">Uptime: {{monitor.uptime_duration | formatDuration}}</span>
+                        <span style="font-size: 0.6em" class="text-dimmed">Uptime duration: {{monitor.uptime_duration | formatDuration}}</span>
                     </span>
                     <span v-if="monitor.status === 2 " class="font-bold variant-tabular text-online">Online</span>
                     <span v-else class="font-bold variant-tabular text-offline">Offline</span>
