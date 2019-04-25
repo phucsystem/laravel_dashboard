@@ -6,21 +6,11 @@ use App\Events\DashboardEvent;
 
 class UptimeRobotFetched extends DashboardEvent
 {
-    /** @var int */
-    public $status;
+    /** @var array */
+    public $monitors;
 
-    /** @var int */
-    public $uptime;
-
-    /** @var int */
-    public $downtime;
-
-    public function __construct(int $status, int $uptime, int $downtime)
+    public function __construct(array $monitors)
     {
-        $this->status = $status;
-
-        $this->uptime = $uptime;
-
-        $this->downtime = $downtime;
+        $this->monitors = $monitors;
     }
 }

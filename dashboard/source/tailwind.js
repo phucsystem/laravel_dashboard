@@ -48,6 +48,8 @@ let textColors = {
     dimmed: 'var(--text-dimmed)',
     accent: 'var(--text-accent)',
     danger: 'var(--text-danger)',
+    online: 'var(--text-online)',
+    offline: 'var(--text-offline)',
 };
 
 let backgroundColors = {

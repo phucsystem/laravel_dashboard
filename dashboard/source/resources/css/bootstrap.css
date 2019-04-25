@@ -6,6 +6,8 @@
     --text-invers: rgba(255, 255, 255, 0.9);
     --text-accent: rgba(25, 71, 147, 0.9);
     --text-danger: rgba(234, 15, 65, 0.9);
+    --text-online: rgba(23, 238, 23, 1);
+    --text-offline: rgba(234, 15, 65, 1);
 
     --bg-screen: rgb(240, 240, 240);
     --bg-tile: rgb(255, 255, 255);

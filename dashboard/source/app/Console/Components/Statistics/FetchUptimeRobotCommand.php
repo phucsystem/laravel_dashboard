@@ -29,9 +29,17 @@ class FetchUptimeRobotCommand extends Command
         ]);
 
         $resObj = \GuzzleHttp\json_decode($res->getBody()->getContents());
-        $monitor = array_pop($resObj->monitors);
-        $uptime_durations = explode('-', $monitor->all_time_uptime_durations);
-        event(new UptimeRobotFetched($monitor->status, $uptime_durations[0], $uptime_durations[1]));
+        $return_arr = [];
+        foreach ($resObj->monitors as $monitor){
+            $uptime_durations = explode('-', $monitor->all_time_uptime_durations);
+            $return_data = [];
+            $return_data['name'] = $monitor->friendly_name;
+            $return_data['url'] = $monitor->url;
+            $return_data['status'] = $monitor->status;
+            $return_data['uptime_duration'] = $uptime_durations[0];
+            $return_arr[] = $return_data;
+        }
+        event(new UptimeRobotFetched($return_arr));
 
         $this->info('All done!');
     }

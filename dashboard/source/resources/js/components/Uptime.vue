@@ -1,27 +1,26 @@
 <template>
-    <tile v-bind:class="{'bg-warn' : isDown}" :position="position" class="markup">
-        <div class="grid gap-2 justify-items-center h-full" style="grid-template-rows: auto 1fr auto;">
-            <div class="markup">
-                <h1>Uptime Robot</h1>
+    <tile :position="position">
+        <div class="grid gap-padding h-full markup">
+            <div class="grid place-center w-10 h-10 rounded-full" style="background-color: rgba(255, 255, 255, .9)">
+                <div class="text-3xl leading-none -mt-1" v-html="emoji('🖥️')"/>
             </div>
-            <div class="align-self-center font-bold text-2xl tracking-wide leading-none">
-                Status: {{ this.getStatus }}
-            </div>
-            <div class="">
-                <div class="grid gap-2 items-center" style="grid-template-columns: repeat(3, auto);">
-                    <span class="text-sm uppercase text-dimmed">Uptime: </span>
-                    <span> {{ this.getUptime }} ms</span>
-                </div>
-                <div class="grid gap-2 items-center" style="grid-template-columns: repeat(3, auto);">
-                    <span class="text-sm uppercase text-dimmed">Downtime: </span>
-                    <span> {{ this.getDowntime }} ms</span>
-                </div>
-            </div>
+            <ul class="align-self-center">
+                <li v-for="monitor in this.monitors">
+                    <span class="font-bold">
+                        <a :href="monitor.url" target="_blank">{{monitor.name}}</a>
+                        <br>
+                        <span class="text-sm text-dimmed">Uptime: {{Math.floor(monitor.uptime_duration/60)}} ms</span>
+                    </span>
+                    <span v-if="monitor.status === 2 " class="font-bold variant-tabular text-online">Online</span>
+                    <span v-else class="font-bold variant-tabular text-offline">Offline</span>
+                </li>
+            </ul>
         </div>
     </tile>
 </template>
 
 <script>
+    import {emoji} from '../helpers';
     import echo from '../mixins/echo';
     import Tile from './atoms/Tile';
     import {formatDuration} from '../helpers';
@@ -41,40 +40,20 @@
 
         data() {
             return {
-                status: 0,
-                uptime: 0,
-                downtime: 0
+                monitors: []
             };
         },
 
         computed: {
-            isDown() {
-                if (this.status == 2) {
-                    return false;
-                }
-                return true;
-            },
-            getStatus() {
-                if (this.status == 2) {
-                    return 'Up';
-                }
-                return 'Down';
-            },
-            getUptime() {
-                return Math.round(this.uptime / 60);
-            },
-            getDowntime() {
-                return Math.round(this.downtime / 60);
-            }
         },
 
         methods: {
+            emoji,
+
             getEventHandlers() {
                 return {
                     'Uptime.UptimeRobotFetched': response => {
-                        this.status = response.status;
-                        this.uptime = response.uptime;
-                        this.downtime = response.downtime;
+                        this.monitors = response.monitors;
                     },
                 };
             },
