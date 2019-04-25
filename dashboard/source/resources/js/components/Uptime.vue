@@ -6,10 +6,10 @@
             </div>
             <ul class="align-self-center">
                 <li v-for="monitor in this.monitors">
-                    <span class="font-bold">
+                    <span class="font-bold" style="line-height: 0.8em">
                         <a :href="monitor.url" target="_blank">{{monitor.name}}</a>
                         <br>
-                        <span class="text-sm text-dimmed">Uptime: {{Math.floor(monitor.uptime_duration/60)}} ms</span>
+                        <span style="font-size: 0.6em" class="text-dimmed">Uptime: {{Math.floor(monitor.uptime_duration/60)}} min</span>
                     </span>
                     <span v-if="monitor.status === 2 " class="font-bold variant-tabular text-online">Online</span>
                     <span v-else class="font-bold variant-tabular text-offline">Offline</span>

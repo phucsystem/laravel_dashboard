@@ -27,7 +27,7 @@ services:
     image: mariadb
     environment:
       MYSQL_ROOT_USER: root
-      MYSQL_ROOT_PASSWORD: root@2019#
+      MYSQL_ROOT_PASSWORD: root@2019
       MYSQL_DATABASE: dashboard_dev
     networks:
       - dashboard-network
