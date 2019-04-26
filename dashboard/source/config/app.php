@@ -180,6 +180,8 @@ return [
         App\Services\Trains\IRailServiceProvider::class,
         App\Services\Buienradar\BuienradarServiceProvider::class,
         App\Services\Forecast\ForecastServiceProvider::class,
+        Pixelpeter\Woocommerce\WoocommerceServiceProvider::class,
+
     ],
 
     /*
@@ -228,6 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'TwitterStreamingApi' => Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiFacade::class,
+        'Woocommerce' => Pixelpeter\Woocommerce\Facades\Woocommerce::class,
+
     ],
 
 ];
