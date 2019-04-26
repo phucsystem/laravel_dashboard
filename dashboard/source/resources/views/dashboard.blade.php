@@ -15,7 +15,7 @@
         <team-member name="sebastian" display-name="seb" avatar="{{ gravatar('sebastian@spatie.be') }}" birthday="1992-02-01" position="d17:d24"></team-member>
         <time-weather position="e1:e6" date-format="ddd DD/MM" time-zone="Europe/Stockholm" weather-city="Gävle"></time-weather>
         <internet-connection position="e1:e6"></internet-connection>
-        <calendar position="e7:e24"></calendar>
+        <orders position="e7:e24"></orders>
     </dashboard>
 </div>
 
