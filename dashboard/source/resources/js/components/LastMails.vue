@@ -8,7 +8,7 @@
                 <li v-for="mail in mails">
                     <div class="my-2">
                         <div class="font-bold text-md-left">{{ mail.messageSubject }}</div>
-                        <div class="text-sm text-dimmed">{{mail.messageDate}}</div>
+                        <div style="font-size: 0.6em" class="text-sm text-dimmed">{{mail.messageDate}}</div>
                     </div>
                 </li>
             </ul>
