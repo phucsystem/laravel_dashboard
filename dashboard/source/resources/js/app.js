@@ -2,6 +2,8 @@ import './bootstrap.js';
 
 import Echo from 'laravel-echo';
 import Vue from 'vue';
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n)
 
 import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
@@ -17,8 +19,33 @@ import TileTimer from './components/TileTimer';
 import LastMails from './components/LastMails';
 import Orders from './components/Orders';
 
+const messages = {
+    en: {
+        message: {
+            uptime: 'Uptime duration',
+            dashboard: 'Dashboard',
+            pending: 'Pending',
+            onhold: 'On-hold',
+            completed: 'Completed',
+            online: 'Online',
+            offline: 'Offline'
+        }
+    },
+    se: {
+        message: {
+        }
+    }
+}
+
+// Create VueI18n instance with options
+const i18n = new VueI18n({
+    locale: 'en', // set locale
+    messages, // set locale messages
+})
+
 new Vue({
     el: '#dashboard',
+    i18n,
 
     components: {
         Dashboard,

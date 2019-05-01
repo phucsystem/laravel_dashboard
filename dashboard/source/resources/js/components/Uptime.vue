@@ -9,10 +9,10 @@
                     <span class="font-bold" style="line-height: 0.6em">
                         <a style="font-size: 0.6em"  :href="monitor.url" target="_blank">{{monitor.name}}</a>
                         <br>
-                        <span style="font-size: 0.5em" class="text-dimmed">Uptime duration: {{monitor.uptime_duration | formatDuration}}</span>
+                        <span style="font-size: 0.5em" class="text-dimmed"> {{ $t("message.uptime") }}: {{monitor.uptime_duration | formatDuration}}</span>
                     </span>
-                    <span style="font-size: 0.6em"  v-if="monitor.status === 2 " class="font-bold variant-tabular text-online">Online</span>
-                    <span style="font-size: 0.6em"  v-else class="font-bold variant-tabular text-offline">Offline</span>
+                    <span style="font-size: 0.6em"  v-if="monitor.status === 2 " class="font-bold variant-tabular text-online">{{ $t("message.online") }}</span>
+                    <span style="font-size: 0.6em"  v-else class="font-bold variant-tabular text-offline">{{ $t("message.offline") }}</span>
                 </li>
             </ul>
         </div>
